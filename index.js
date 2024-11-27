@@ -2,6 +2,7 @@ const express = require('express');
 const CryptoJS = require("crypto-js");
 const XTEncryptAES256V4 = require('./utils/Encrypt')
 const XTDecryptAES256V4 = require('./utils/Decript')
+const XTEncryptAES256V5 = require('./utils/csvContentEncrypt')
 const app = express();
 
 // Middleware to parse JSON
@@ -24,6 +25,14 @@ app.post('/decript', (req, res) => {
 app.post('/encript', (req, res) => {
     const { message, secretKey, iv } = req.body;
     var result = XTEncryptAES256V4(message, secretKey, iv);
+
+    res.send(result);
+});
+
+app.post('/csv', (req, res) => {
+    const { message, secretKey, iv } = req.body;
+    var result = XTEncryptAES256V5(message, secretKey, iv);
+
 
     res.send(result);
 });
