@@ -1,0 +1,17 @@
+{
+  "name": "jsontools",
+  "version": "1.0.0",
+  "description": "json encoder ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "express": "^4.21.1",
+    "jsontools": "file:"
+  }
+}
